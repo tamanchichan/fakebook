@@ -7,6 +7,7 @@
   --header-menu-color: #fcfcfc;
   --header-menu-color-hover: #52abff;
   --header-title-color: #3fa2ff;
+  --post-bg-color: #fff;
   --post-box-bg-color: #1f2229;
   --post-box-button-bg-color: #2993ff;
   --post-box-button-color: #e2f0ff;
@@ -33,6 +34,10 @@ body {
   width: min(100% - 30px, 1080px);
 }
 
+.date {
+  font-size: 15px;
+}
+
 .file-name {
   color: var(--file-name-color);
   font-size: 15px;
@@ -43,9 +48,19 @@ body {
 
 .input-img {font-size: 0px;}
 
+.img {margin: 10px 0px;}
+
 .header-menu {font-size: 0px;}
 
 .header-title {font-size: 0px;}
+
+.post {
+  background-color: var(--post-bg-color);
+  border-radius: 10px;
+  margin-bottom: 30px;
+  padding: 10px;
+  width: 600px;
+}
 
 .post-box {
   background-color: var(--post-box-bg-color);
@@ -56,7 +71,39 @@ body {
   width: 600px;
 }
 
-.user {font-size: 0px;}
+.post-header {
+  font-size: 0px;
+  height: 50px;
+  justify-content: space-between;
+  line-height: 50px;
+}
+
+.post-header-column-1 {display: flex;}
+
+.post-header-column-2 {display: flex;}
+
+.post-main {margin: 20px 0px;}
+
+.text {margin: 10px 0px;}
+
+.user {
+  background-image: url('../image/user.jpg');
+  background-position: center;
+  background-size: cover;
+  border: 2px solid #32ff32;
+  border-radius: 100%;
+  cursor: pointer;
+  font-size: 0px;
+  height: 40px;
+  margin: 5px 0px;
+  width: 40px;
+}
+
+.username {
+  font-size: 15px;
+  font-weight: 600;
+  margin-left: 10px;
+}
 
 /* header */
 header {
@@ -90,13 +137,13 @@ header .header-menu nav li:hover {
   color: var(--header-menu-color-hover);
 }
 
-header .user img {
+/* header .user img {
   border-radius: 100%;
   cursor: pointer;
   height: 40px;
   margin: 5px 0px;
   width: 40px;
-}
+} */
 /* main */
 main .post-box textarea {
   background-color: transparent;
