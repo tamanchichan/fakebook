@@ -3,9 +3,14 @@
 :root {
   --body-bg-color: #14161d;
   --header-bg-color: #1f2229;
+  --file-name-color: #bdbdbd;
   --header-menu-color: #fcfcfc;
   --header-menu-color-hover: #52abff;
   --header-title-color: #3fa2ff;
+  --post-box-bg-color: #1f2229;
+  --post-box-button-bg-color: #2993ff;
+  --post-box-button-color: #e2f0ff;
+  --post-box-textarea-color: #97989b;
 }
 
 /* html */
@@ -14,16 +19,42 @@ body {
 }
 
 /* class */
+.button {
+  font-size: 0px;
+}
+
+.center {
+  display: grid;
+  place-content: center;
+}
+
 .container {
   margin-inline: auto;
   width: min(100% - 30px, 1080px);
 }
 
+.file-name {
+  color: var(--file-name-color);
+  font-size: 15px;
+  margin-left: 10px;
+}
+
 .flex {display: flex;}
+
+.input-img {font-size: 0px;}
 
 .header-menu {font-size: 0px;}
 
 .header-title {font-size: 0px;}
+
+.post-box {
+  background-color: var(--post-box-bg-color);
+  border-radius: 10px;
+  font-size: 0px;
+  margin: 50px 0px;
+  padding: 15px;
+  width: 600px;
+}
 
 .user {font-size: 0px;}
 
@@ -67,3 +98,38 @@ header .user img {
   width: 40px;
 }
 /* main */
+main .post-box textarea {
+  background-color: transparent;
+  color: #97989b;
+  font-size: 18px;
+  height: 150px;
+  padding: 10px;
+  resize: none;
+  width: 600px;
+}
+
+main .post-box .flex {
+  height: 40px;
+  justify-content: space-between;
+  line-height: 40px;
+}
+
+main .post-box .flex .input-img input[type=file] {
+  display: none;
+  line-height: 40px;
+}
+
+main .post-box .flex .input-img label i {
+  cursor: pointer;
+  font-size: 25px;
+  line-height: 40px;
+}
+
+main .post-box .flex .button button {
+  background-color: var(--post-box-button-bg-color);
+  border-radius: 5px;
+  color: var(--post-box-button-color);
+  font-size: 18px;
+  line-height: 40px;
+  width: 80px;
+}
