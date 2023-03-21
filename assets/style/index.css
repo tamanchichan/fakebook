@@ -1,7 +1,69 @@
 @import url('./reset.css');
 
+:root {
+  --body-bg-color: #14161d;
+  --header-bg-color: #1f2229;
+  --header-menu-color: #fcfcfc;
+  --header-menu-color-hover: #52abff;
+  --header-title-color: #3fa2ff;
+}
+
+/* html */
+body {
+  background-color: var(--body-bg-color);
+}
+
 /* class */
 .container {
   margin-inline: auto;
   width: min(100% - 30px, 1080px);
 }
+
+.flex {display: flex;}
+
+.header-menu {font-size: 0px;}
+
+.header-title {font-size: 0px;}
+
+.user {font-size: 0px;}
+
+/* header */
+header {
+  background-color: var(--header-bg-color);
+  height: 50px;
+  line-height: 50px;
+}
+
+header .flex {
+  justify-content: space-between;
+}
+
+header .header-title h1 {
+  color: var(--header-title-color);
+  font-size: 24px;
+}
+
+header .header-menu nav li {
+  color: var(--header-menu-color);
+  cursor: pointer;
+  display: inline;
+  font-size: 18px;
+  transition: all 0.25s ease-in-out;
+}
+
+header .header-menu nav li + li {
+  margin-left: 15px;
+}
+
+header .header-menu nav li:hover {
+  color: var(--header-menu-color-hover);
+}
+
+header .user img {
+  border-radius: 100%;
+  cursor: pointer;
+  height: 40px;
+  margin: 5px 0px;
+  width: 40px;
+}
+/* main */
