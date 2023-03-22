@@ -68,11 +68,15 @@ function createPost() {
 };
 
 button.addEventListener('click', () => {
-  createPost();
-  
-  textArea.value = '';
-  inputFile.value = '';
-  output.innerText = '';
+  if(textArea.value.length > 0 || inputFile.files.length > 0) {    
+    createPost();
+    
+    textArea.value = '';
+    inputFile.value = '';
+    output.innerText = '';
+  } else {
+    return false;
+  };
 });
 
 class User {
