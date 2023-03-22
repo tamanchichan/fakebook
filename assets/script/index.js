@@ -1,5 +1,6 @@
 'use strict';
 
+const user = document.querySelector('.user');
 const inputFile = document.querySelector('input[type=file]');
 const output = document.querySelector('.file-name');
 const textArea = document.querySelector('.text-area');
@@ -38,16 +39,18 @@ function createPost() {
   text.classList.add('text');
   image.classList.add('img');
   
-  date.innerText = new Date().toDateString().slice(4);
+  date.innerText = new Date().toLocaleDateString();
   text.innerText = textArea.value;
   
-  reader.readAsDataURL(file);
-  
-  reader.addEventListener('load', () => {
-    const img = document.createElement('img');
-    img.src = reader.result;
-    image.appendChild(img);
-  });
+  if (inputFile.files.length > 0) {
+    reader.readAsDataURL(file);
+    
+    reader.addEventListener('load', () => {
+      const img = document.createElement('img');
+      img.src = reader.result;
+      image.appendChild(img);
+    });
+  }
   
   content.appendChild(post);
   post.appendChild(postHeader);
@@ -106,3 +109,17 @@ class Subscriber extends User {
   get groups() {return this.#groups};
   get canMonetize() {return this.#canMonetize};
 };
+
+const userAccount = new Subscriber(
+  'U1999',
+  'Taman Chi Chan',
+  'tamanchichan',
+  'tamanchichan@gmail.com',
+  ['MapleStory', 'League of Legends', 'Valorant'],
+  ['Software Developer', 'MITT', 'Winnipeg'],
+  true
+)
+
+user.addEventListener('click', () => {
+
+});
