@@ -40,6 +40,7 @@ function createPost() {
   text.classList.add('text');
   image.classList.add('img');
   
+  username.innerText = userAccount.name;
   date.innerText = new Date().toLocaleDateString();
   text.innerText = textArea.value;
   
