@@ -1,6 +1,7 @@
 'use strict';
 
 const user = document.querySelector('.user');
+const userInfo = document.querySelector('.user-info');
 const inputFile = document.querySelector('input[type=file]');
 const output = document.querySelector('.file-name');
 const textArea = document.querySelector('.text-area');
@@ -91,6 +92,10 @@ class User {
   get name() {return this.#name};
   get username() {return this.#username};
   get email() {return this.#email};
+  
+  getInfo() {
+    return `ID: ${this.#id} <br> Name: ${this.#name} <br> User: ${this.#username} <br> E-mail: ${this.#email}`;
+  }
 };
 
 class Subscriber extends User {
@@ -108,6 +113,10 @@ class Subscriber extends User {
   get pages() {return this.#pages};
   get groups() {return this.#groups};
   get canMonetize() {return this.#canMonetize};
+  
+  getInfo() {
+    return `${super.getInfo()} <br> Pages: ${this.#pages} <br> Groups: ${this.#groups} <br> Can Monetize: ${this.#canMonetize}`;
+  }
 };
 
 const userAccount = new Subscriber(
@@ -118,8 +127,13 @@ const userAccount = new Subscriber(
   ['MapleStory', 'League of Legends', 'Valorant'],
   ['Software Developer', 'MITT', 'Winnipeg'],
   true
-)
+);
 
 user.addEventListener('click', () => {
-
+  if(userInfo.style.display === 'block') {
+    userInfo.style.display = 'none';
+  } else {
+    userInfo.style.display = 'block';
+  }
+  userInfo.innerHTML = userAccount.getInfo();
 });

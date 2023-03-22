@@ -12,11 +12,19 @@
   --post-box-button-bg-color: #2993ff;
   --post-box-button-color: #e2f0ff;
   --post-box-textarea-color: #97989b;
+  --user-info-bg-color: #4b4e53;
+  --user-info-color: #fff;
 }
 
 /* html */
 body {
   background-color: var(--body-bg-color);
+}
+
+/* animation */
+@keyframes opacity {
+  from {opacity: 25%}
+  to {opacity: 100%}
 }
 
 /* class */
@@ -97,6 +105,17 @@ body {
   height: 40px;
   margin: 5px 0px;
   width: 40px;
+}
+
+.user-info {
+  animation: opacity 0.25s ease-in;
+  display: none;
+  background-color: var(--user-info-bg-color);
+  border-radius: 25px;
+  color: var(--user-info-color);
+  inset: 75px 50px auto auto;
+  padding: 25px;
+  position: fixed;
 }
 
 .username {
